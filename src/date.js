@@ -31,7 +31,7 @@ const TimeOfDay = () => {
   return (
     <div className='tyme'>
       
-      <h2> Today is: {date.toLocaleDateString()}</h2>
+      <h3> Today is: {date.toLocaleDateString()}</h3>
 
      
     </div>

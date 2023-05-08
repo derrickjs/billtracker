@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from "react";
-import {Button, TextField, Fab} from "@mui/material";
+import {Button, TextField, Fab , InputAdornment , FormControl, FormHelperText} from "@mui/material";
 import { useState , useEffect } from 'react';
 import { db } from "./firebase";
 import TimeOfDay from './date';
@@ -54,7 +54,7 @@ function App() {
 
 
   
-
+    
   
 
   
@@ -86,18 +86,40 @@ function App() {
 
     <section className='textfield'>
      
-   
-    <TextField helperText = "Billing company" className="tf" onChange = {(event) => setBill(event.target.value)} /> 
+    
+    <TextField    className = "tf" onChange = { (event) => setBill(event.target.value)} InputProps={{
+          endAdornment: 
+          
+          (
+
+            <InputAdornment position="end">
+              Billing Company
+            </InputAdornment>
+          ),
+        }}/> 
+    
    
     
    
-    <TextField  helperText = "Due Date (format mm/dd/yyyy)" className="tf" onChange = {(event) => setDueDate(event.target.value)} />
+    <TextField   className = "tf" onChange = {(event) => setDueDate(event.target.value)}   InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              Due Date (Format: MM/DD/YYYY)
+            </InputAdornment>
+          ),
+        }}/>
  
 
    
-    <TextField helperText = "Amount" className="tf" onChange = {(event) => setAmount(event.target.value)} />
+    <TextField    className = "tf" onChange = {(event) => setAmount(event.target.value)}   InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              $ Amount
+            </InputAdornment>
+          ),
+        }} />
    
-    <Button  className = ".MuiButton-outlined" variant="outlined" onClick={addItem}>Add to List</Button>
+    <Button  className = ".MuiButton-outlined" variant="contained" onClick={addItem}>Add to List</Button>
     
     </section>
     
@@ -111,7 +133,7 @@ function App() {
 
       
         <li style={{ backgroundColor: Date.now() > Date.parse(item.dueDate) ? "yellow" : "lightgrey" } } >
-          <Fab className="resize" size="small" aria-label="remove" onClick={() => { deleteItem(item.id) }}>✖</Fab> 
+          <Fab variant = "extended" className="resize" size="small" aria-label="remove" onClick={() => { deleteItem(item.id) }}>DELETE</Fab> 
           Company: {item.company} &nbsp; &nbsp; &nbsp; &nbsp; 
           Due Date: {item.dueDate} &nbsp; &nbsp; &nbsp; &nbsp; 
           Amount owed: {item.amount}   </li>

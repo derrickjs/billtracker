@@ -17,13 +17,23 @@ body{
 h1{
   font-size: 4em;
   text-align: center;
-  color: black;
+  color: lightseagreen;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  
+
   
 }
 
 h2{
-  color:black;
+  color: lightseagreen;
+  font-size: 3em;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+h3{
+  color: lightseagreen;
   font-size: 2em;
+  text-shadow: -2px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -64,7 +74,7 @@ ul{
 }
 
 .textfield{
-  border-bottom: 1px solid grey;
+  
   display: block;
   justify-content: center;
   width: 100%;
@@ -72,16 +82,17 @@ ul{
 }
 
 .time{
+  font-size: .8em;
   margin-left:5%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-header{
-  background-color: lightblue;
-}
+
 
 button{
   height:10%;
 }
+
 
 @media screen and (max-width: 600px) {
 
